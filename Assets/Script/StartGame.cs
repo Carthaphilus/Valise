@@ -36,6 +36,7 @@ public class StartGame : MonoBehaviour
 
             for (int x=0; x<=nbPNJ; x++)
             {
+                //y bouge pas
 
             }
 
