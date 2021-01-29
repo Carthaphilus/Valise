@@ -13731,7 +13731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   compteurStart: 5
   textCompteur: {fileID: 1413590623}
-  nbPNJ: 20
+  nbPNJ: 100
   PNJhomme: {fileID: 2096499588}
   PNJfemme: {fileID: 1899968547}
 --- !u!65 &1522577139

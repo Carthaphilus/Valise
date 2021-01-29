@@ -44,10 +44,10 @@ public class StartGame : MonoBehaviour
                 float PNJx = Random.Range(486.21F, 524.92F);
                 float PNJz = Random.Range(511.52F, 609.91F);
 
-                Debug.Log("P:"+x);
-                Debug.Log("Genre:" + genre);
-                Debug.Log("X:" + PNJx);
-                Debug.Log("Z:" + PNJz);
+                //Debug.Log("P:"+x);
+                //Debug.Log("Genre:" + genre);
+                //Debug.Log("X:" + PNJx);
+                //Debug.Log("Z:" + PNJz);
 
                 if (genre == 1) {
                     GeneratePnJ = Instantiate(PNJfemme, new Vector3(PNJx, 1F, PNJz), new Quaternion());
