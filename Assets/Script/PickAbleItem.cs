@@ -45,15 +45,17 @@ public class PickAbleItem : MonoBehaviour
         Rb.velocity = Vector3.zero;
         Rb.angularVelocity = Vector3.zero;
 
+        //Transform Valise = gameObject.transform.Find("Valise");
+
         // Set Slot as a parent
         gameObject.transform.SetParent(slot.transform);
 
         // Reset position and rotation
-        gameObject.transform.localPosition = Vector3.zero;
-        gameObject.transform.localEulerAngles = Vector3.zero;
+        //gameObject.transform.localPosition = Vector3.zero;
+        //gameObject.transform.localEulerAngles = Vector3.zero;
 
-        gameObject.transform.Find("Obj1").GetComponent<MeshCollider>().enabled = false;
-        gameObject.transform.Find("Obj1").transform.localPosition = VectorP;
-        gameObject.transform.Find("Obj1").transform.localEulerAngles = VectorP2;
+        gameObject.transform.GetComponent<MeshCollider>().enabled = false;
+        gameObject.transform.transform.localPosition = VectorP;
+        gameObject.transform.transform.localEulerAngles = VectorP2;
     }
 }
