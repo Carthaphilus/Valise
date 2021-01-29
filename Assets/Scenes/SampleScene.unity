@@ -23993,6 +23993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valise
       objectReference: {fileID: 0}
+    - target: {fileID: 1121525155587680, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4764624344734074, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -66325,7 +66329,7 @@ MonoBehaviour:
   nbValise: 4
   PNJhomme: {fileID: 2096499588}
   PNJfemme: {fileID: 1899968547}
-  Valise: {fileID: 0}
+  Valise: {fileID: 557530083}
 --- !u!65 &1522577139
 BoxCollider:
   m_ObjectHideFlags: 0
