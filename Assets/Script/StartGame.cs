@@ -38,20 +38,24 @@ public class StartGame : MonoBehaviour
 
             for (int x=0; x<=nbPNJ; x++)
             {
-                System.Random random = new System.Random();
                 Object GeneratePnJ;
                 string namePNJ;
-                float genre = Random.Range(1, 2);
+                int genre = Random.Range(1, 3);
+                float PNJx = Random.Range(486.21F, 524.92F);
+                float PNJz = Random.Range(511.52F, 609.91F);
 
                 Debug.Log("P:"+x);
+                Debug.Log("Genre:" + genre);
+                Debug.Log("X:" + PNJx);
+                Debug.Log("Z:" + PNJz);
 
                 if (genre == 1) {
-                    GeneratePnJ = Instantiate(PNJfemme, new Vector3(Random.Range(486.21F, 524.92F), 1F, Random.Range(511.52F, 609.91F)), new Quaternion());
+                    GeneratePnJ = Instantiate(PNJfemme, new Vector3(PNJx, 1F, PNJz), new Quaternion());
                     namePNJ = "PNJ_Femme_" + x;
                 }
                 else
                 {
-                    GeneratePnJ = Instantiate(PNJhomme, new Vector3(Random.Range(486.21F, 524.92F), 1F, Random.Range(511.52F, 609.91F)), new Quaternion());
+                    GeneratePnJ = Instantiate(PNJhomme, new Vector3(PNJx, 1F, PNJz), new Quaternion());
                     namePNJ = "PNJ_Homme_" + x;
                 }
 

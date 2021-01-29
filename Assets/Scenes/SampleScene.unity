@@ -11591,6 +11591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_PolygonPrototype_Buildings_Floor_5x5_01P
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 08b90f6a0b333ce47b856ad0651fdde4, type: 3}
+      propertyPath: m_TagString
+      value: Spawn
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 08b90f6a0b333ce47b856ad0651fdde4, type: 3}
       propertyPath: m_RootOrder
       value: 135
