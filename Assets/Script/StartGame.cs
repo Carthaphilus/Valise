@@ -112,6 +112,11 @@ public class StartGame : MonoBehaviour
                         }
                     }
 
+                    int PnjNumber = Random.Range(0, nbPNJ);
+                    GameObject PNJchoose = GameObject.Find("PNJ_" + PnjNumber);
+                    //PNJchoose.GetComponent<WaitItem>().setWaitItem(GenerateValise.gameObject.GetInstanceID());
+                    //PNJchoose.GetComponent<WaitItem>().setWaitItem(PNJchoose.GetInstanceID());
+                    GenerateValise.GetComponent<WaitPnj>().setWaitPnj(PNJchoose.GetInstanceID());
                     GenerateValise.gameObject.SetActive(true);
                 }
             }

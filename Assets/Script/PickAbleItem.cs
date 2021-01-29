@@ -24,7 +24,7 @@ public class PickAbleItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player" && picked == false)
+        if(other.gameObject.tag == "Player" && picked == false && slot.transform.childCount == 0)
         {
             PickItem();
             picked = true;
