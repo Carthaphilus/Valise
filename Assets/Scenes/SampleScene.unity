@@ -66523,6 +66523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compteurStart: 5
+  dureeGameSeconde: 60
   textCompteur: {fileID: 1413590623}
   nbPNJ: 10
   nbValise: 4

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
     public int compteurStart;
+    public float dureeGameSeconde;
     public TMP_Text textCompteur;
     public int nbPNJ;
     public int nbValise = 0;
@@ -114,19 +116,33 @@ public class StartGame : MonoBehaviour
 
                     int PnjNumber = Random.Range(0, nbPNJ);
                     GameObject PNJchoose = GameObject.Find("PNJ_" + PnjNumber);
-                    //PNJchoose.GetComponent<WaitItem>().setWaitItem(GenerateValise.gameObject.GetInstanceID());
-                    //PNJchoose.GetComponent<WaitItem>().setWaitItem(PNJchoose.GetInstanceID());
                     GenerateValise.GetComponent<WaitPnj>().setWaitPnj(PNJchoose.GetInstanceID());
                     GenerateValise.gameObject.SetActive(true);
                 }
             }
-
-            textCompteur.enabled = false;
+            StartCoroutine(timeGame());
+            //textCompteur.enabled = false;
         }
         else
         {
             StartCoroutine(startGame());
         }
+    }
+
+    IEnumerator timeGame()
+    {
+        yield return new WaitForSeconds(1F);
+        dureeGameSeconde --;
+        textCompteur.text = System.Convert.ToString(dureeGameSeconde);
+        if (dureeGameSeconde <= 0) {
+            Debug.Log("Partie Finie");
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            StartCoroutine(timeGame());
+        }
+            
     }
 
 
@@ -136,6 +152,27 @@ public class StartGame : MonoBehaviour
         {
             StartCoroutine(startGame());
             run = true;
+        }
+    }
+
+    void OnGUI()
+    {
+        if (dureeGameSeconde <=0)
+        {
+            // Si on clique sur le bouton alors isPaused devient faux donc le jeu reprend
+            if (GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 - 20, 80, 40), "Restart"))
+            {
+                Application.Quit(); // Ferme le jeu
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("SampleScene");
+            }
+            // Si on clique sur le bouton alors on ferme completment le jeu ou on charge la scene Menu Principal
+            // Dans le cas du bouton Quitter, il faut augmenter sa position Y pour qu'il soit plus bas.
+            if (GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 + 40, 80, 40), "Quitter"))
+            {
+                Application.Quit(); // Ferme le jeu
+                SceneManager.LoadScene("Menu Principal");
+            }
         }
     }
 }
